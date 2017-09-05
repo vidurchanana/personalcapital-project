@@ -25,3 +25,16 @@ Note: On windows you'll have to download a curl package. On Linux, it's comparit
 Note: before selection, a Lambda function needs to be created. 
 
 8. Go ahead and access the Lambda AWS Service and create a function. I created a Node.js function for the service. This function gets triggered whenever the API is called. Please refer to the APIfunction.js file. 
+
+Endpoints available for search are:  
+1. Plan Name: If you search for TIFFANY AND COMPANY EMPLOYEE ASSISTANCE PROGRAM, the encoded link will be : https://ssooiujwig.execute-api.us-west-1.amazonaws.com/prod/getPlans?plan-name=TIFFANY%20AND%20COMPANY%20EMPLOYEE%20ASSISTANCE%20PROGRAM
+
+e.g. https://ssooiujwig.execute-api.us-west-1.amazonaws.com/prod/getPlans?plan-name= Your Plan Name
+
+2. Sponsor Name: If you search for NORTHERN NEW JERSEY TEAMSTERS BENEFIT PLAN DEFINED CONTRIBUTION FUND, the link generated: https://ssooiujwig.execute-api.us-west-1.amazonaws.com/prod/getPlans?sponsor-name=NORTHERN%20NEW%20JERSEY%20TEAMSTERS%20BENEFIT%20PLAN
+
+e.g. https://ssooiujwig.execute-api.us-west-1.amazonaws.com/prod/getPlans?sponsor-name= Your Sponsor Name
+
+3. Sponsor State: Similary all the plans in Wisconsin would be as follows - https://ssooiujwig.execute-api.us-west-1.amazonaws.com/prod/getPlans?sponsor-state=WI
+
+e.g. https://ssooiujwig.execute-api.us-west-1.amazonaws.com/prod/getPlans?sponsor-state= Your Sponsor State
