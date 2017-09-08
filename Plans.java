@@ -5,16 +5,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.URL;									//Contains the URLEncoder
+import java.net.URL;									
 import java.net.URLEncoder;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler; 
-//import com.amazonaws.util.json.*;
 
 class Request{
 	String planName;
@@ -50,17 +47,6 @@ class Request{
 	
 }
 
-//class Response{
-//	JSONObject json;
-//
-//	public JSONObject getJson() {
-//		return json;
-//	}
-//
-//	public void setJson(JSONObject json) {
-//		this.json = json;
-//	}
-//}
 public class Plans implements RequestHandler<Request, JSONObject> {
 	
 	@Override
@@ -72,7 +58,7 @@ public class Plans implements RequestHandler<Request, JSONObject> {
 				url+="PLAN_NAME:\""+URLEncoder.encode(request.planName, "UTF-8")+"\"";
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
-			}						// Add URLEncoder.encode(planName, "UTF-8")
+			}						
 		}
 		
 		if(request.sponsorName!=null){
