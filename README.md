@@ -27,6 +27,7 @@ Note: before selection, a Lambda function needs to be created.
 8. Go ahead and access the Lambda AWS Service and create a function. I created a Node.js function for the service. This function gets triggered whenever the API is called. Please refer to the APIfunction.js file. 
 
 NodeJS
+
 Endpoints available for search via NodeJS are:  
 1. Plan Name: If you search for TIFFANY AND COMPANY EMPLOYEE ASSISTANCE PROGRAM, the encoded link will be : https://ssooiujwig.execute-api.us-west-1.amazonaws.com/prod/getPlans?plan-name=TIFFANY%20AND%20COMPANY%20EMPLOYEE%20ASSISTANCE%20PROGRAM
 
