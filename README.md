@@ -17,7 +17,7 @@ I have used a small instance for this project.
 4. Once all the JSON files are ready, they can be uploaded from command prompt with a curl command. 
 Note: On windows you'll have to download a curl package. On Linux, it's comparitively easier to install packages as it can be simply done from  a sudo apt-get install bash command. 
 
-5. The upload data can be confirmed with a feature prvided by AWS ES, Kibana. Since ES is for data analytics, Kibana is wonderful tool to visualize and explore data. For more informatin, refer here: https://aws.amazon.com/elasticsearch-service/kibana/
+5. The upload data can be confirmed with a feature prvided by AWS ES, Kibana. Since ES is for data analytics, Kibana is wonderful tool to visualize and explore data. For more information, refer here: https://aws.amazon.com/elasticsearch-service/kibana/
 
 6. Next, you have to use a service - API Gateway. I went ahead and created a resurce and GET function. The endpoint in this case would be your ES domain and can be accessed on the AWS ES dashboard. For this project, there were three query parameters - Plan Name, Sponsor Name and Sponsor State. These can be created while creating the GET method. 
 
