@@ -13,7 +13,7 @@ var endpoint = new AWS.Endpoint(esDomain.endpoint);
 var creds = new AWS.EnvironmentCredentials('AWS');
 
 exports.handler = (event, context, callback) => {
-    console.log("something");
+    //console.log("something");
     var planName=event.planName;
     var sponsorName=event.sponsorName;
     var sponsorState=event.sponsorState;
@@ -33,7 +33,7 @@ exports.handler = (event, context, callback) => {
     var req = new AWS.HttpRequest(endpoint);
      req.method = 'GET';
      req.path = path;
-     console.log(path);
+     //console.log(path);
      req.region = esDomain.region;
      req.headers['presigned-expires'] = false;
      req.headers['Host'] = endpoint.host;
