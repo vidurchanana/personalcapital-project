@@ -25,14 +25,13 @@ public class CSVtoJSON {
 		// the directory containing the .csv files.
 		// A single connection is thread-safe for use by several threads.
 		Connection conn = DriverManager.getConnection("jdbc:relique:csv:" + " ");	//Source CSV file
+		
 		// Create a Statement object to execute the query with.
-		// A Statement is not thread-safe.
 		Statement stmt = conn.createStatement();
 		String query= "SELECT * FROM csvdata";					//csvdata is the source file
-		// Select the ID and NAME columns from sample.csv
+		
+		// Select the ID and NAME columns from csvdata.csv
 		ResultSet results = stmt.executeQuery(query);
-
-		//JSONArray json = new JSONArray();
 		ResultSetMetaData metadata = results.getMetaData();
 		int numColumns = metadata.getColumnCount();
 		int count=1;
