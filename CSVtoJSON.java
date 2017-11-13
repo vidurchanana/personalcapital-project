@@ -37,18 +37,17 @@ public class CSVtoJSON {
 		int count=1;
 		while(results.next())             //iterate rows
 		{
+			JSONObject obj = new JSONObject();      //extends HashMap
+			for (int i = 1; i <= numColumns; ++i)           //iterate columns
+			{
+			    String column_name = metadata.getColumnName(i);
+			    obj.put(column_name, results.getObject(column_name));
+			}
 
-		JSONObject obj = new JSONObject();      //extends HashMap
-		for (int i = 1; i <= numColumns; ++i)           //iterate columns
-		{
-		    String column_name = metadata.getColumnName(i);
-		    obj.put(column_name, results.getObject(column_name));
-		}
-
-		writer.write("{ \"index\" : { \"_index\": \"plans\", \"_type\" : \"listings\", \"_id\" : \""+count+"\" } }\n");
-		writer.write(obj.toString());
-		writer.write("\n");
-		count++;
+			writer.write("{ \"index\" : { \"_index\": \"plans\", \"_type\" : \"listings\", \"_id\" : \""+count+"\" } }\n");
+			writer.write(obj.toString());
+			writer.write("\n");
+			count++;
 		}
 		// Clean up
 		conn.close();
